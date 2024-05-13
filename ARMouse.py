@@ -16,8 +16,6 @@ def hit_sure():
 # 初始化数值
 wCam, hCam = 640, 480   # 摄像头宽度
 wScr, hScr = autopy.screen.size()   # 获取屏幕尺寸
-# screen_size = screen.get_monitors()[0].physical_size
-# wScr, hScr = screen_size.width, screen_size.height   # 获取屏幕尺寸
 frameR = 150   # 摄像头边框宽度
 smoothening = 7   # 平滑度
 sense = 3   # 灵敏度
@@ -143,7 +141,6 @@ while True:
 
     # 左键按下
     if fingers == [0, 1, 0, 0, 0] and flag_change == 1:
-        # autopy.mouse.toggle(None, True)
         control.press(mouse.Button.left)
         flag_click = 1
         info[4] = 10
@@ -153,7 +150,6 @@ while True:
     # 左键单击
     if var_flag3.get() == '1':
         if fingers == [1, 0, 1, 1, 1] and flag_change == 1:
-            # autopy.mouse.click()
             control.click(mouse.Button.left, 1)
             info[4] = 10
 
@@ -162,8 +158,6 @@ while True:
     # 左键双击
     if var_flag4.get() == '1':
         if fingers == [0, 1, 1, 0, 0] and flag_change == 1:
-            # autopy.mouse.click()
-            # autopy.mouse.click()
             control.click(mouse.Button.left, 2)
             info[0] = 10
 
@@ -171,7 +165,6 @@ while True:
 
     # 右键
     if fingers == finger_RC and flag_change == 1:
-        # autopy.mouse.click(autopy.mouse.Button.RIGHT)
         control.click(mouse.Button.right, 1)
         info[1] = 10
 
@@ -230,7 +223,6 @@ while True:
     else:
         flag_change = 1
         flag_click = 0
-        # autopy.mouse.toggle(None, False)
         control.release(mouse.Button.left)
     fingers_old = fingers
 
